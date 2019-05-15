@@ -44,7 +44,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPlainTextEdit" name="numbe2Hex">
+   <widget class="QPlainTextEdit" name="number2Hex">
     <property name="geometry">
      <rect>
       <x>370</x>
