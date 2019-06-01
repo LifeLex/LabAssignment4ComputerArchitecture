@@ -16,6 +16,7 @@
 #include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
@@ -28,12 +29,13 @@ public:
     QPlainTextEdit *number1;
     QPlainTextEdit *number1Hex;
     QPlainTextEdit *number2;
-    QPlainTextEdit *numbe2Hex;
+    QPlainTextEdit *number2Hex;
     QPushButton *adding;
     QPushButton *multiplying;
     QPushButton *dividing;
     QPlainTextEdit *result;
     QPlainTextEdit *resultHex;
+    QTextEdit *textEdit;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -54,24 +56,27 @@ public:
         number2 = new QPlainTextEdit(centralWidget);
         number2->setObjectName(QString::fromUtf8("number2"));
         number2->setGeometry(QRect(370, 20, 221, 31));
-        numbe2Hex = new QPlainTextEdit(centralWidget);
-        numbe2Hex->setObjectName(QString::fromUtf8("numbe2Hex"));
-        numbe2Hex->setGeometry(QRect(370, 60, 221, 31));
+        number2Hex = new QPlainTextEdit(centralWidget);
+        number2Hex->setObjectName(QString::fromUtf8("number2Hex"));
+        number2Hex->setGeometry(QRect(370, 60, 221, 31));
         adding = new QPushButton(centralWidget);
         adding->setObjectName(QString::fromUtf8("adding"));
-        adding->setGeometry(QRect(30, 150, 121, 31));
+        adding->setGeometry(QRect(20, 100, 121, 31));
         multiplying = new QPushButton(centralWidget);
         multiplying->setObjectName(QString::fromUtf8("multiplying"));
-        multiplying->setGeometry(QRect(230, 150, 111, 31));
+        multiplying->setGeometry(QRect(240, 100, 111, 31));
         dividing = new QPushButton(centralWidget);
         dividing->setObjectName(QString::fromUtf8("dividing"));
-        dividing->setGeometry(QRect(450, 150, 131, 31));
+        dividing->setGeometry(QRect(460, 100, 131, 31));
         result = new QPlainTextEdit(centralWidget);
         result->setObjectName(QString::fromUtf8("result"));
-        result->setGeometry(QRect(210, 200, 151, 31));
+        result->setGeometry(QRect(30, 160, 151, 31));
         resultHex = new QPlainTextEdit(centralWidget);
         resultHex->setObjectName(QString::fromUtf8("resultHex"));
-        resultHex->setGeometry(QRect(210, 240, 151, 31));
+        resultHex->setGeometry(QRect(30, 200, 151, 31));
+        textEdit = new QTextEdit(centralWidget);
+        textEdit->setObjectName(QString::fromUtf8("textEdit"));
+        textEdit->setGeometry(QRect(230, 150, 371, 141));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));

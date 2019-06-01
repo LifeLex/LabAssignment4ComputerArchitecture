@@ -57,8 +57,8 @@
    <widget class="QPushButton" name="adding">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>150</y>
+      <x>20</x>
+      <y>100</y>
       <width>121</width>
       <height>31</height>
      </rect>
@@ -70,8 +70,8 @@
    <widget class="QPushButton" name="multiplying">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>150</y>
+      <x>240</x>
+      <y>100</y>
       <width>111</width>
       <height>31</height>
      </rect>
@@ -83,8 +83,8 @@
    <widget class="QPushButton" name="dividing">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>150</y>
+      <x>460</x>
+      <y>100</y>
       <width>131</width>
       <height>31</height>
      </rect>
@@ -96,8 +96,8 @@
    <widget class="QPlainTextEdit" name="result">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>200</y>
+      <x>30</x>
+      <y>160</y>
       <width>151</width>
       <height>31</height>
      </rect>
@@ -106,10 +106,20 @@
    <widget class="QPlainTextEdit" name="resultHex">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>240</y>
+      <x>30</x>
+      <y>200</y>
       <width>151</width>
       <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>150</y>
+      <width>371</width>
+      <height>141</height>
      </rect>
     </property>
    </widget>

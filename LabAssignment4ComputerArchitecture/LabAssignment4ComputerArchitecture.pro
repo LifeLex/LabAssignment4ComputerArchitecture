@@ -27,11 +27,13 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    adding.cpp
+    adding.cpp \
+    multiplying.cpp
 
 HEADERS += \
         mainwindow.h \
-    adding.h
+    adding.h \
+    multiplying.h
 
 FORMS += \
         mainwindow.ui

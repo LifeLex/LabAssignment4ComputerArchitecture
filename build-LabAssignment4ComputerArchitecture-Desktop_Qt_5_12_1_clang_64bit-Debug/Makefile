@@ -54,10 +54,12 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../LabAssignment4ComputerArchitecture/main.cpp \
 		../LabAssignment4ComputerArchitecture/mainwindow.cpp \
-		../LabAssignment4ComputerArchitecture/adding.cpp moc_mainwindow.cpp
+		../LabAssignment4ComputerArchitecture/adding.cpp \
+		../LabAssignment4ComputerArchitecture/multiplying.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		adding.o \
+		multiplying.o \
 		moc_mainwindow.o
 DIST          = /Volumes/DiskExpansion/Aplicaciones/Qt/5.12.1/clang_64/mkspecs/features/spec_pre.prf \
 		/Volumes/DiskExpansion/Aplicaciones/Qt/5.12.1/clang_64/mkspecs/qdevice.pri \
@@ -253,9 +255,11 @@ DIST          = /Volumes/DiskExpansion/Aplicaciones/Qt/5.12.1/clang_64/mkspecs/f
 		/Volumes/DiskExpansion/Aplicaciones/Qt/5.12.1/clang_64/mkspecs/features/yacc.prf \
 		/Volumes/DiskExpansion/Aplicaciones/Qt/5.12.1/clang_64/mkspecs/features/lex.prf \
 		../LabAssignment4ComputerArchitecture/LabAssignment4ComputerArchitecture.pro ../LabAssignment4ComputerArchitecture/mainwindow.h \
-		../LabAssignment4ComputerArchitecture/adding.h ../LabAssignment4ComputerArchitecture/main.cpp \
+		../LabAssignment4ComputerArchitecture/adding.h \
+		../LabAssignment4ComputerArchitecture/multiplying.h ../LabAssignment4ComputerArchitecture/main.cpp \
 		../LabAssignment4ComputerArchitecture/mainwindow.cpp \
-		../LabAssignment4ComputerArchitecture/adding.cpp
+		../LabAssignment4ComputerArchitecture/adding.cpp \
+		../LabAssignment4ComputerArchitecture/multiplying.cpp
 QMAKE_TARGET  = LabAssignment4ComputerArchitecture
 DESTDIR       = 
 TARGET        = LabAssignment4ComputerArchitecture.app/Contents/MacOS/LabAssignment4ComputerArchitecture
@@ -703,8 +707,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /Volumes/DiskExpansion/Aplicaciones/Qt/5.12.1/clang_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../LabAssignment4ComputerArchitecture/mainwindow.h ../LabAssignment4ComputerArchitecture/adding.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../LabAssignment4ComputerArchitecture/main.cpp ../LabAssignment4ComputerArchitecture/mainwindow.cpp ../LabAssignment4ComputerArchitecture/adding.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../LabAssignment4ComputerArchitecture/mainwindow.h ../LabAssignment4ComputerArchitecture/adding.h ../LabAssignment4ComputerArchitecture/multiplying.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../LabAssignment4ComputerArchitecture/main.cpp ../LabAssignment4ComputerArchitecture/mainwindow.cpp ../LabAssignment4ComputerArchitecture/adding.cpp ../LabAssignment4ComputerArchitecture/multiplying.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../LabAssignment4ComputerArchitecture/mainwindow.ui $(DISTDIR)/
 
 
@@ -787,8 +791,17 @@ mainwindow.o: ../LabAssignment4ComputerArchitecture/mainwindow.cpp ../LabAssignm
 		../LabAssignment4ComputerArchitecture/adding.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../LabAssignment4ComputerArchitecture/mainwindow.cpp
 
-adding.o: ../LabAssignment4ComputerArchitecture/adding.cpp ../LabAssignment4ComputerArchitecture/adding.h
+adding.o: ../LabAssignment4ComputerArchitecture/adding.cpp ../LabAssignment4ComputerArchitecture/adding.h \
+		../LabAssignment4ComputerArchitecture/mainwindow.h \
+		/Volumes/DiskExpansion/Aplicaciones/Qt/5.12.1/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Volumes/DiskExpansion/Aplicaciones/Qt/5.12.1/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o adding.o ../LabAssignment4ComputerArchitecture/adding.cpp
+
+multiplying.o: ../LabAssignment4ComputerArchitecture/multiplying.cpp ../LabAssignment4ComputerArchitecture/multiplying.h \
+		../LabAssignment4ComputerArchitecture/mainwindow.h \
+		/Volumes/DiskExpansion/Aplicaciones/Qt/5.12.1/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
+		/Volumes/DiskExpansion/Aplicaciones/Qt/5.12.1/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o multiplying.o ../LabAssignment4ComputerArchitecture/multiplying.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
